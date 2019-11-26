@@ -1,0 +1,15 @@
+:host {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+
+  table {
+    width: 100%;
+  }
+
+  forgerock-customer-logo-container {
+    display: block;
+    padding: 10px 10px 30px 10px;
+    text-align: center;
+  }
+}
