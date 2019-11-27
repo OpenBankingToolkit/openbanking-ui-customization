@@ -1,6 +1,8 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // OVERWRITES SOME OF THE MAT COMPONENT MIXINS TO SUPPORT CSS VARS
-@import 'mixins/cssvars';
+@import "mixins/cssvars";
+
+@import "../app/components/material/material.component.theme.scss";
 
 @mixin foregrock-material-theme($theme) {
   // Including only the components that we use:
@@ -20,10 +22,10 @@
   // @include mat-dialog-theme($theme);
   // @include mat-divider-theme($theme);
   @include mat-expansion-panel-theme($theme);
-  // @include mat-form-field-theme($theme);
+  @include mat-form-field-theme($theme);
   // @include mat-grid-list-theme($theme);
   @include mat-icon-theme($theme);
-  // @include mat-input-theme($theme);
+  @include mat-input-theme($theme);
   // @include mat-list-theme($theme);
   @include mat-menu-theme($theme);
   @include mat-paginator-theme($theme);
@@ -41,4 +43,5 @@
   @include mat-tooltip-theme($theme);
   // @include mat-tree-theme($theme);
   @include mat-snack-bar-theme($theme);
+  @include customization-material-components($theme);
 }

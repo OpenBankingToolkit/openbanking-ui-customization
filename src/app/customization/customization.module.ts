@@ -9,6 +9,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatInputModule } from "@angular/material/input";
 import { ColorPickerModule } from "ngx-color-picker";
 import { FileDropModule } from "ngx-file-drop";
 import { StoreModule, ActionReducerMap } from "@ngrx/store";
@@ -22,7 +23,12 @@ import { PaletteSampleComponent } from "./components/palette-sample/palette-samp
 import { PaletteBackgroundComponent } from "./components/palette-background/palette-background.component";
 import { FileUploadComponent } from "./components/file-upload/file-upload.component";
 import { ForgerockCustomizationToken } from "./tokens";
-import customizationFilesReducer from "./store/reducers/files";
+import customizationFilesReducer, {
+  customizationFilesReducerKey
+} from "./store/reducers/files";
+import customizationMetaReducer, {
+  customizationMetaReducerKey
+} from "./store/reducers/metadata";
 import { ForgerockCustomerFaviconModule } from "ob-ui-libs/components/forgerock-customer-favicon";
 import { ForgerockCustomerIconCustomModule } from "./components/forgerock-customer-icon/forgerock-customer-icon.module";
 import { ForgerockCustomerLogoCustomModule } from "./components/forgerock-customer-logo/forgerock-customer-logo.module";
@@ -40,7 +46,8 @@ export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<any>>(
 
 export function getCustomReducers() {
   return {
-    customFiles: customizationFilesReducer
+    [customizationFilesReducerKey]: customizationFilesReducer,
+    [customizationMetaReducerKey]: customizationMetaReducer
   };
 }
 
@@ -55,6 +62,7 @@ export function getCustomReducers() {
     MatExpansionModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatInputModule,
     FormsModule,
     ReactiveFormsModule,
     ColorPickerModule,

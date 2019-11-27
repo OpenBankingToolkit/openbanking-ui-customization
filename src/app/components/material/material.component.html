@@ -1,5 +1,21 @@
+<div id="menu">
+  <mat-list role="list">
+    <mat-list-item role="listitem"
+      ><a href="#buttons">Buttons</a></mat-list-item
+    >
+    <mat-list-item role="listitem"><a href="#cards">Cards</a></mat-list-item>
+    <mat-list-item role="listitem"><a href="#table">Table</a></mat-list-item>
+    <mat-list-item role="listitem"><a href="#forms">Forms</a></mat-list-item>
+    <mat-list-item role="listitem"
+      ><a href="#accordion">Accordion</a></mat-list-item
+    >
+    <mat-list-item role="listitem"
+      ><a href="#loadings">Loadings</a></mat-list-item
+    >
+  </mat-list>
+</div>
 <h1>Material Design components</h1>
-<h2>Buttons</h2>
+<h2 id="buttons">Buttons</h2>
 <div class="example-button-row">
   <button mat-button>Basic</button>
   <button mat-button color="primary">Primary</button>
@@ -17,18 +33,24 @@
   <a mat-raised-button routerLink=".">Link</a>
 </div>
 <hr />
-<h2>Cards</h2>
+<h2 id="cards">Cards</h2>
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"><forgerock-customer-icon-container width="40"></forgerock-customer-icon-container></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <div mat-card-avatar class="example-header-image">
+      <forgerock-customer-icon-container
+        width="40"
+      ></forgerock-customer-icon-container>
+    </div>
+    <mat-card-title>ForgeRock</mat-card-title>
+    <mat-card-subtitle>San Francisco, U.S.A</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz
-      breeds of dog from Japan. A small, agile dog that copes very well with
-      mountainous terrain, the Shiba Inu was originally bred for hunting.
+      ForgeRock is a multinational identity and access management software
+      company headquartered in San Francisco, U.S.A. The company develops
+      commercial open source identity and access management products for
+      internet of things, customer, cloud, mobile, and enterprise environments.
+      Fran Rosch is the CEO
     </p>
   </mat-card-content>
   <mat-card-actions>
@@ -37,18 +59,29 @@
   </mat-card-actions>
 </mat-card>
 
-<br/>
+<br />
 
 <mat-card>
-    <mat-card-content>
-      <forgerock-customer-logo-container width="270"></forgerock-customer-logo-container>
-      <mat-progress-bar *ngIf="!response && !error" mode="indeterminate" color="accent"></mat-progress-bar>
-    </mat-card-content>
-  </mat-card>
-  
+  <mat-card-content>
+    <forgerock-customer-logo-container
+      width="270"
+    ></forgerock-customer-logo-container>
+    <p>
+      ForgeRock is a multinational identity and access management software
+      company headquartered in San Francisco, U.S.A. The company develops
+      commercial open source identity and access management products for
+      internet of things, customer, cloud, mobile, and enterprise environments.
+      Fran Rosch is the CEO
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
 
 <hr />
-<h2>Table</h2>
+<h2 id="table">Table</h2>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!--- Note that these columns can be defined in any order.
@@ -82,7 +115,7 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
-<hr />
+<hr id="forms" />
 <h2>Form - Datepicker</h2>
 
 <mat-form-field>
@@ -101,3 +134,43 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
+
+<hr />
+<h2 id="accordion">Accordion</h2>
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder="First name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Age" />
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description> Hello </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<hr />
+<h2 id="loadings">Loading</h2>
+
+<mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+<br />
+<mat-spinner></mat-spinner>

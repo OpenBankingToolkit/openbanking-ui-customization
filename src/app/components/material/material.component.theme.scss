@@ -1,0 +1,15 @@
+@mixin customization-material-components($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $background-bg-color: mat-color($background, hover);
+  $foreground-text-color: mat-color($foreground, text);
+
+  app-material {
+    #menu {
+      background-color: $background-bg-color;
+      a {
+        color: $foreground-text-color;
+      }
+    }
+  }
+}

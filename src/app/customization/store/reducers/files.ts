@@ -1,8 +1,8 @@
-import { Action } from '@ngrx/store';
-import _get from 'lodash-es/get';
-import { FileUploadChangeObject } from '../../components/file-upload/file-upload.component';
+import { Action } from "@ngrx/store";
+import _get from "lodash-es/get";
+import { FileUploadChangeObject } from "../../components/file-upload/file-upload.component";
 
-export const reducerKey = 'customFiles';
+export const customizationFilesReducerKey = "customFiles";
 
 export interface ICustomizationFilesState {
   logo: FileUploadChangeObject;
@@ -11,9 +11,9 @@ export interface ICustomizationFilesState {
 }
 
 export enum types {
-  ADD_LOGO = 'ADD_LOGO',
-  ADD_ICON = 'ADD_ICON',
-  ADD_FAVICON = 'ADD_FAVICON'
+  ADD_LOGO = "ADD_LOGO",
+  ADD_ICON = "ADD_ICON",
+  ADD_FAVICON = "ADD_FAVICON"
 }
 
 export class AddLogoAction implements Action {
@@ -59,10 +59,14 @@ export default function customizationFilesReducer(
   }
 }
 
-const selectAll = (state: any): string => _get(state, `customization[${reducerKey}]`);
-const selectLogo = (state: any): string => _get(state, `customization[${reducerKey}].logo.file`);
-const selectIcon = (state: any): string => _get(state, `customization[${reducerKey}].icon.file`);
-const selectFavicon = (state: any): string => _get(state, `customization[${reducerKey}].favicon.file`);
+const selectAll = (state: any): string =>
+  _get(state, `customization[${customizationFilesReducerKey}]`);
+const selectLogo = (state: any): string =>
+  _get(state, `customization[${customizationFilesReducerKey}].logo.file`);
+const selectIcon = (state: any): string =>
+  _get(state, `customization[${customizationFilesReducerKey}].icon.file`);
+const selectFavicon = (state: any): string =>
+  _get(state, `customization[${customizationFilesReducerKey}].favicon.file`);
 
 export const selectors = {
   selectAll,

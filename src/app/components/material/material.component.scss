@@ -12,4 +12,14 @@
     padding: 10px 10px 30px 10px;
     text-align: center;
   }
+
+  #menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 20px;
+    min-width: 200px;
+    a {
+    }
+  }
 }
