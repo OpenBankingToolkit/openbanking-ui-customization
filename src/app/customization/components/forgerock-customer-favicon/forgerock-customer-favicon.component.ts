@@ -5,8 +5,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { HttpClient } from "@angular/common/http";
 
 import { selectors } from "../../store/reducers/files";
-import { ForgerockConfigService } from "ob-ui-libs/services/forgerock-config";
-import { ForgerockCustomerFaviconComponent } from "ob-ui-libs/components/forgerock-customer-favicon";
+import { ForgerockConfigService } from "@forgerock/openbanking-ngx-common/services/forgerock-config";
+import { ForgerockCustomerFaviconComponent } from "@forgerock/openbanking-ngx-common/components/forgerock-customer-favicon";
 
 @Component({
   selector: "forgerock-customer-favicon-container",

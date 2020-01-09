@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { UploadEvent, FileSystemFileEntry } from 'ngx-file-drop';
 
-import { ForgerockMessagesService } from 'ob-ui-libs/services/forgerock-messages';
+import { ForgerockMessagesService } from '@forgerock/openbanking-ngx-common/services/forgerock-messages';
 
 export interface FileUploadChangeObject {
   file: string;

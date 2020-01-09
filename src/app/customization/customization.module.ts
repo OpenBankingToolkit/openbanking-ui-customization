@@ -17,7 +17,7 @@ import { StoreModule, ActionReducerMap } from "@ngrx/store";
 import { ForgerockCustomizationSidenavComponent } from "./components/sidenav/sidenav.component";
 import { ForgerockCustomizationService } from "./services/customization.service";
 import { ForgerockCssVarsService } from "./services/cssvars.service";
-import { ForgerockMessagesModule } from "ob-ui-libs/services/forgerock-messages";
+import { ForgerockMessagesModule } from "@forgerock/openbanking-ngx-common/services/forgerock-messages";
 import { PaletteComponent } from "./components/palette/palette.component";
 import { PaletteSampleComponent } from "./components/palette-sample/palette-sample.component";
 import { PaletteBackgroundComponent } from "./components/palette-background/palette-background.component";
@@ -29,7 +29,7 @@ import customizationFilesReducer, {
 import customizationMetaReducer, {
   customizationMetaReducerKey
 } from "./store/reducers/metadata";
-import { ForgerockCustomerFaviconModule } from "ob-ui-libs/components/forgerock-customer-favicon";
+import { ForgerockCustomerFaviconModule } from "@forgerock/openbanking-ngx-common/components/forgerock-customer-favicon";
 import { ForgerockCustomerIconCustomModule } from "./components/forgerock-customer-icon/forgerock-customer-icon.module";
 import { ForgerockCustomerLogoCustomModule } from "./components/forgerock-customer-logo/forgerock-customer-logo.module";
 import { ForgerockCustomerFaviconCustomModule } from "./components/forgerock-customer-favicon/forgerock-customer-favicon.module";

@@ -16,7 +16,7 @@ import { MatListModule } from "@angular/material/list";
 import { MaterialComponent } from "./material.component";
 import { ForgerockCustomerIconCustomModule } from "../../customization/components/forgerock-customer-icon/forgerock-customer-icon.module";
 import { ForgerockCustomerLogoCustomModule } from "../../customization/components/forgerock-customer-logo/forgerock-customer-logo.module";
-import { ForgerockCustomerLogoModule } from "ob-ui-libs/components/forgerock-customer-logo";
+import { ForgerockCustomerLogoModule } from "@forgerock/openbanking-ngx-common/components/forgerock-customer-logo";
 
 @NgModule({
   declarations: [MaterialComponent],

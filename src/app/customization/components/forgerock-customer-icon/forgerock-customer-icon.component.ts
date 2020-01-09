@@ -4,9 +4,9 @@ import { Observable } from "rxjs";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HttpClient } from "@angular/common/http";
 
-import { ForgerockConfigService } from "ob-ui-libs//services/forgerock-config";
+import { ForgerockConfigService } from "@forgerock/openbanking-ngx-common//services/forgerock-config";
 import { selectors } from "../../store/reducers/files";
-import { ForgerockCustomerIconComponent } from "ob-ui-libs/components/forgerock-customer-icon";
+import { ForgerockCustomerIconComponent } from "@forgerock/openbanking-ngx-common/components/forgerock-customer-icon";
 
 @Component({
   selector: "forgerock-customer-icon-container",
