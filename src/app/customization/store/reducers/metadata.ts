@@ -9,37 +9,29 @@ export interface ICustomizationMetadataState {
 }
 
 export enum types {
-  ADD_META_TITLE = "ADD_META_TITLE",
-  ADD_META_DESCRIPTION = "ADD_META_DESCRIPTION"
+  UPDATE_METAS = "UPDATE_METAS",
 }
 
-export class AddMetaTitleAction implements Action {
-  readonly type = types.ADD_META_TITLE;
-  constructor(public payload: string) {}
-}
-
-export class AddMetaDescriptionAction implements Action {
-  readonly type = types.ADD_META_DESCRIPTION;
-  constructor(public payload: string) {}
+export class UpdateMetasAction implements Action {
+  readonly type = types.UPDATE_METAS;
+  constructor(public payload: ICustomizationMetadataState) {}
 }
 
 export const initialState: ICustomizationMetadataState = {
   title: "",
-  description: ""
+  description: "",
 };
 
-export type ActionsUnion = AddMetaTitleAction | AddMetaDescriptionAction;
+export type ActionsUnion = UpdateMetasAction;
 
 export default function customizationMetaReducer(
   state: ICustomizationMetadataState = initialState,
   action: ActionsUnion
 ): ICustomizationMetadataState {
   switch (action.type) {
-    case types.ADD_META_TITLE: {
-      return { ...state, title: action.payload };
-    }
-    case types.ADD_META_DESCRIPTION: {
-      return { ...state, description: action.payload };
+    case types.UPDATE_METAS: {
+      const { title, description } = action.payload;
+      return { ...state, title, description };
     }
 
     default:
@@ -47,15 +39,9 @@ export default function customizationMetaReducer(
   }
 }
 
-const selectAll = (state: any): string =>
+const selectAll = (state: any): ICustomizationMetadataState =>
   _get(state, `customization[${customizationMetaReducerKey}]`);
-const selectTitle = (state: any): string =>
-  _get(state, `customization[${customizationMetaReducerKey}].title`);
-const selectDescription = (state: any): string =>
-  _get(state, `customization[${customizationMetaReducerKey}].description`);
 
 export const selectors = {
   selectAll,
-  selectTitle,
-  selectDescription
 };

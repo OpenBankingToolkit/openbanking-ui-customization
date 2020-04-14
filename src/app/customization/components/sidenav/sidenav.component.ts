@@ -4,66 +4,64 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  OnDestroy
+  OnDestroy,
 } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { FormGroup, FormControl } from "@angular/forms";
+import { Store, select } from "@ngrx/store";
 
 import { ForgerockCustomizationService } from "../../services/customization.service";
 import { FileUploadChangeObject } from "../file-upload/file-upload.component";
 import {
   AddLogoAction,
   AddIconAction,
-  AddFaviconAction
+  AddFaviconAction,
 } from "../../store/reducers/files";
 import {
-  AddMetaTitleAction,
-  AddMetaDescriptionAction
+  selectors,
+  ICustomizationMetadataState,
+  UpdateMetasAction,
 } from "../../store/reducers/metadata";
-import { Subscription } from "rxjs";
+import { Subscription, Observable } from "rxjs";
+import { MetaFormValues } from "../metas/metas.component";
+import { first } from "rxjs/operators";
 
 @Component({
   selector: "forgerock-customization-sidenav",
   templateUrl: "./sidenav.component.html",
   styleUrls: ["./sidenav.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ForgerockCustomizationSidenavComponent
   implements OnInit, OnDestroy {
   @Input() disableIcon = false;
   isOpened: boolean = false;
-  metaForm: FormGroup;
-  metaFormSubscirption: Subscription;
+  customizationServiceSubscription: Subscription;
+  metas$: Observable<ICustomizationMetadataState> = this.store.pipe(
+    first(),
+    select(selectors.selectAll)
+  );
 
   constructor(
     protected store: Store<any>,
     private customizationService: ForgerockCustomizationService,
     private cdr: ChangeDetectorRef
-  ) {
-    this.metaForm = new FormGroup({
-      title: new FormControl(""),
-      description: new FormControl("")
-    });
-  }
+  ) {}
 
   ngOnInit() {
-    this.customizationService.onOpen().subscribe((isOpened: boolean) => {
-      this.isOpened = isOpened;
-      this.cdr.detectChanges();
-    });
-
-    this.metaFormSubscirption = this.metaForm.valueChanges.subscribe(
-      ({ title, description }) => {
-        title && this.store.dispatch(new AddMetaTitleAction(title));
-        description &&
-          this.store.dispatch(new AddMetaDescriptionAction(description));
-      }
-    );
+    this.customizationServiceSubscription = this.customizationService
+      .onOpen()
+      .subscribe((isOpened: boolean) => {
+        this.isOpened = isOpened;
+        this.cdr.detectChanges();
+      });
     this.open();
   }
 
   ngOnDestroy() {
-    this.metaFormSubscirption.unsubscribe();
+    this.customizationServiceSubscription.unsubscribe();
+  }
+
+  metasChange(values: MetaFormValues) {
+    this.store.dispatch(new UpdateMetasAction(values));
   }
 
   close() {

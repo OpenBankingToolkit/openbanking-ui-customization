@@ -18,24 +18,12 @@
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <mat-panel-title>Metadata</mat-panel-title>
+            <mat-panel-title>HTML Metas</mat-panel-title>
           </mat-expansion-panel-header>
-          <form [formGroup]="metaForm">
-            <mat-form-field>
-              <input
-                matInput
-                placeholder="Page Title"
-                formControlName="title"
-              />
-            </mat-form-field>
-            <mat-form-field>
-              <textarea
-                matInput
-                placeholder="Description"
-                formControlName="description"
-              ></textarea>
-            </mat-form-field>
-          </form>
+          <forgerock-metas
+            [defaultValues]="metas$ | async"
+            (update)="metasChange($event)"
+          ></forgerock-metas>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>

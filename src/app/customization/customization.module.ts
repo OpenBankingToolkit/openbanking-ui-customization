@@ -24,15 +24,16 @@ import { PaletteBackgroundComponent } from "./components/palette-background/pale
 import { FileUploadComponent } from "./components/file-upload/file-upload.component";
 import { ForgerockCustomizationToken } from "./tokens";
 import customizationFilesReducer, {
-  customizationFilesReducerKey
+  customizationFilesReducerKey,
 } from "./store/reducers/files";
 import customizationMetaReducer, {
-  customizationMetaReducerKey
+  customizationMetaReducerKey,
 } from "./store/reducers/metadata";
 import { ForgerockCustomerFaviconModule } from "@forgerock/openbanking-ngx-common/components/forgerock-customer-favicon";
 import { ForgerockCustomerIconCustomModule } from "./components/forgerock-customer-icon/forgerock-customer-icon.module";
 import { ForgerockCustomerLogoCustomModule } from "./components/forgerock-customer-logo/forgerock-customer-logo.module";
 import { ForgerockCustomerFaviconCustomModule } from "./components/forgerock-customer-favicon/forgerock-customer-favicon.module";
+import { MetasModule } from "./components/metas/metas.module";
 
 export interface ForgerockCustomization {
   cssVars: string;
@@ -47,7 +48,7 @@ export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<any>>(
 export function getCustomReducers() {
   return {
     [customizationFilesReducerKey]: customizationFilesReducer,
-    [customizationMetaReducerKey]: customizationMetaReducer
+    [customizationMetaReducerKey]: customizationMetaReducer,
   };
 }
 
@@ -72,23 +73,24 @@ export function getCustomReducers() {
     ForgerockCustomerFaviconCustomModule,
     ForgerockCustomerFaviconModule,
     ForgerockMessagesModule,
-    StoreModule.forFeature("customization", REDUCER_TOKEN)
+    MetasModule,
+    StoreModule.forFeature("customization", REDUCER_TOKEN),
   ],
   declarations: [
     ForgerockCustomizationSidenavComponent,
     PaletteComponent,
     PaletteSampleComponent,
     PaletteBackgroundComponent,
-    FileUploadComponent
+    FileUploadComponent,
   ],
   exports: [ForgerockCustomizationSidenavComponent],
   providers: [
     {
       provide: REDUCER_TOKEN,
       deps: [],
-      useFactory: getCustomReducers
-    }
-  ]
+      useFactory: getCustomReducers,
+    },
+  ],
 })
 export class ForgerockCustomizationModule {
   static forRoot(config: ForgerockCustomizationFactory): ModuleWithProviders {
@@ -97,8 +99,8 @@ export class ForgerockCustomizationModule {
       providers: [
         ForgerockCustomizationService,
         ForgerockCssVarsService,
-        { provide: ForgerockCustomizationToken, useFactory: config }
-      ]
+        { provide: ForgerockCustomizationToken, useFactory: config },
+      ],
     };
   }
 }
