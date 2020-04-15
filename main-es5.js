@@ -111,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-form-field>\n  <mat-select placeholder=\"Apply predefined theme\" [formControl]=\"themesControl\">\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      {{ name }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of foregroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('foreground', color) }\"\n  [colorPicker]=\"getCssVarValue('foreground', color)\"\n  [style.background]=\"getCssVarValue('foreground', color)\"\n  cpPosition=\"left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('foreground', color, $event)\"\n>\n  {{ color }}\n</button>\n<button\n  mat-button\n  *ngFor=\"let color of backgroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('background', color) }\"\n  [colorPicker]=\"getCssVarValue('background', color)\"\n  [style.background]=\"getCssVarValue('background', color)\"\n  cpPosition=\"left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('background', color, $event)\"\n>\n  {{ color }}\n</button>\n";
+    __webpack_exports__["default"] = "<mat-form-field>\n  <mat-select\n    placeholder=\"Apply predefined theme\"\n    [formControl]=\"themesControl\"\n  >\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      {{ name }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of foregroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('foreground', color) }\"\n  [colorPicker]=\"getCssVarValue('foreground', color)\"\n  [style.background]=\"getCssVarValue('foreground', color)\"\n  cpPosition=\"top-left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('foreground', color, $event)\"\n>\n  {{ color }}\n</button>\n<button\n  mat-button\n  *ngFor=\"let color of backgroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('background', color) }\"\n  [colorPicker]=\"getCssVarValue('background', color)\"\n  [style.background]=\"getCssVarValue('background', color)\"\n  cpPosition=\"top-left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('background', color, $event)\"\n>\n  {{ color }}\n</button>\n";
     /***/
   },
 
@@ -151,7 +151,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-form-field>\n  <mat-select placeholder=\"Apply predefined theme\" [formControl]=\"themesControl\">\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      <forgerock-customization-palette-sample\n        [colors]=\"[themeObject[name]['500']]\"\n      ></forgerock-customization-palette-sample>\n      {{ name | slice: 4 }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of paletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor(color) }\"\n  [colorPicker]=\"getCssVarValue(color)\"\n  [style.background]=\"getCssVarValue(color)\"\n  cpPosition=\"left\"\n  cpAlphaChannel=\"disabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor(color, $event)\"\n>\n  {{ color }}\n</button>\n";
+    __webpack_exports__["default"] = "<mat-form-field>\n  <mat-select\n    placeholder=\"Apply predefined theme\"\n    [formControl]=\"themesControl\"\n  >\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      <forgerock-customization-palette-sample\n        [colors]=\"[themeObject[name]['500']]\"\n      ></forgerock-customization-palette-sample>\n      {{ name | slice: 4 }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of paletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor(color) }\"\n  [colorPicker]=\"getCssVarValue(color)\"\n  [style.background]=\"getCssVarValue(color)\"\n  cpPosition=\"top-left\"\n  cpAlphaChannel=\"disabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor(color, $event)\"\n>\n  {{ color }}\n</button>\n";
     /***/
   },
 
@@ -2739,7 +2739,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var ngx_color_picker__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! ngx-color-picker */
-    "./node_modules/ngx-color-picker/__ivy_ngcc__/dist/ngx-color-picker.es5.js");
+    "./node_modules/ngx-color-picker/__ivy_ngcc__/fesm2015/ngx-color-picker.js");
     /* harmony import */
 
 
@@ -2938,9 +2938,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../tokens */
     "./src/app/customization/tokens.ts");
 
-    var paletteProps = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', 'A100', 'A200', 'A400', 'A700'];
-    var paletteForegroundProps = ['base', 'divider', 'dividers', 'disabled', 'disabled-button', 'disabled-text', 'hint-text', 'secondary-text', 'icon', 'icons', 'text', 'slider-min', 'slider-off', 'slider-off-active'];
-    var paletteBackgroundProps = ['status-bar', 'app-bar', 'background', 'hover', 'card', 'dialog', 'disabled-button', 'raised-button', 'focused-button', 'selected-button', 'selected-disabled-button', 'disabled-button-toggle', 'unselected-chip', 'disabled-list-option'];
+    var paletteProps = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "A100", "A200", "A400", "A700"];
+    var paletteForegroundProps = ["base", "divider", "dividers", "disabled", "disabled-button", "disabled-text", "hint-text", "secondary-text", "icon", "icons", "text", "slider-min", "slider-off", "slider-off-active"];
+    var paletteBackgroundProps = ["status-bar", "app-bar", "background", "hover", "card", "dialog", "disabled-button", "raised-button", "focused-button", "selected-button", "selected-disabled-button", "disabled-button-toggle", "unselected-chip", "disabled-list-option", "tooltip"];
 
     var ForgerockCssVarsService =
     /*#__PURE__*/
@@ -2961,23 +2961,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this._backgroundPaletteNames = [];
 
         this.applyPrimaryTheme = function (theme) {
-          return _this10.injectVariables(theme, '--palette-primary');
+          return _this10.injectVariables(theme, "--palette-primary");
         };
 
         this.applyAccentTheme = function (theme) {
-          return _this10.injectVariables(theme, '--palette-accent');
+          return _this10.injectVariables(theme, "--palette-accent");
         };
 
         this.applyWarnTheme = function (theme) {
-          return _this10.injectVariables(theme, '--palette-warn');
+          return _this10.injectVariables(theme, "--palette-warn");
         };
 
         this.applyForegroundTheme = function (theme) {
-          return _this10.injectVariables(theme, '--palette-foreground');
+          return _this10.injectVariables(theme, "--palette-foreground");
         };
 
         this.applyBackgroundTheme = function (theme) {
-          return _this10.injectVariables(theme, '--palette-background');
+          return _this10.injectVariables(theme, "--palette-background");
         }; // Keep in case the palette list changes
         // const cssVars = require('sass-extract-loader!./cssvars.scss');
         // console.log(cssVars);
@@ -2988,15 +2988,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getThemeNamesByType",
         value: function getThemeNamesByType(type) {
           switch (type) {
-            case 'primary':
-            case 'accent':
-            case 'warn':
+            case "primary":
+            case "accent":
+            case "warn":
               return this.matPaletteNames;
 
-            case 'foreground':
+            case "foreground":
               return this.foregroundPaletteNames;
 
-            case 'background':
+            case "background":
               return this.backgroundPaletteNames;
 
             default:
@@ -3007,15 +3007,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getThemeObjectByType",
         value: function getThemeObjectByType(type) {
           switch (type) {
-            case 'primary':
-            case 'accent':
-            case 'warn':
+            case "primary":
+            case "accent":
+            case "warn":
               return this.matPalettes;
 
-            case 'foreground':
+            case "foreground":
               return this.foregroundPalettes;
 
-            case 'background':
+            case "background":
               return this.backgroundPalettes;
 
             default:
@@ -3026,15 +3026,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getPalettePropsByType",
         value: function getPalettePropsByType(type) {
           switch (type) {
-            case 'primary':
-            case 'accent':
-            case 'warn':
+            case "primary":
+            case "accent":
+            case "warn":
               return paletteProps;
 
-            case 'foreground':
+            case "foreground":
               return paletteForegroundProps;
 
-            case 'background':
+            case "background":
               return paletteBackgroundProps;
 
             default:
@@ -3089,7 +3089,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     this._foregroundPaletteNames = foregroundPaletteNames;
                     this._matPaletteNames = matPaletteNames;
 
-                    this._document.documentElement.setAttribute('style', this._config.cssVars);
+                    this._document.documentElement.setAttribute("style", this._config.cssVars);
 
                   case 18:
                     return _context.abrupt("return", Promise.resolve());
@@ -3108,23 +3108,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (!theme) return;
 
           switch (type) {
-            case 'primary':
+            case "primary":
               this.applyPrimaryTheme(theme);
               break;
 
-            case 'accent':
+            case "accent":
               this.applyAccentTheme(theme);
               break;
 
-            case 'warn':
+            case "warn":
               this.applyWarnTheme(theme);
               break;
 
-            case 'foreground':
+            case "foreground":
               this.applyForegroundTheme(theme);
               break;
 
-            case 'background':
+            case "background":
               this.applyBackgroundTheme(theme);
               break;
 
@@ -3140,15 +3140,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setCssVarValue",
         value: function setCssVarValue(cssVar, value) {
-          var _value$split = value.split(','),
+          var _value$split = value.split(","),
               _value$split2 = _slicedToArray(_value$split, 4),
               r = _value$split2[0],
               g = _value$split2[1],
               b = _value$split2[2],
               _value$split2$ = _value$split2[3],
-              a = _value$split2$ === void 0 ? '1' : _value$split2$;
+              a = _value$split2$ === void 0 ? "1" : _value$split2$;
 
-          this._document.documentElement.style.setProperty(cssVar, [r, g, b].join(', '));
+          this._document.documentElement.style.setProperty(cssVar, [r, g, b].join(", "));
 
           if (this.getCssVarValue(cssVar) || parseInt(a, 10) < 1) {
             this._document.documentElement.style.setProperty("".concat(cssVar, "-alpha"), a);
@@ -3160,7 +3160,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this11 = this;
 
           return Object.values(this._document.documentElement.style).reduce(function (prev, current) {
-            if (current.startsWith('--')) {
+            if (current.startsWith("--")) {
               return Object.assign(prev, _defineProperty({}, current, _this11.getCssVarValue(current)));
             }
 
@@ -3219,7 +3219,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     ForgerockCssVarsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-      providedIn: 'root'
+      providedIn: "root"
     }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_tokens__WEBPACK_IMPORTED_MODULE_3__["ForgerockCustomizationToken"]))], ForgerockCssVarsService);
     /***/
   },

@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-form-field>\n  <mat-select placeholder=\"Apply predefined theme\" [formControl]=\"themesControl\">\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      {{ name }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of foregroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('foreground', color) }\"\n  [colorPicker]=\"getCssVarValue('foreground', color)\"\n  [style.background]=\"getCssVarValue('foreground', color)\"\n  cpPosition=\"left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('foreground', color, $event)\"\n>\n  {{ color }}\n</button>\n<button\n  mat-button\n  *ngFor=\"let color of backgroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('background', color) }\"\n  [colorPicker]=\"getCssVarValue('background', color)\"\n  [style.background]=\"getCssVarValue('background', color)\"\n  cpPosition=\"left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('background', color, $event)\"\n>\n  {{ color }}\n</button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-form-field>\n  <mat-select\n    placeholder=\"Apply predefined theme\"\n    [formControl]=\"themesControl\"\n  >\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      {{ name }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of foregroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('foreground', color) }\"\n  [colorPicker]=\"getCssVarValue('foreground', color)\"\n  [style.background]=\"getCssVarValue('foreground', color)\"\n  cpPosition=\"top-left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('foreground', color, $event)\"\n>\n  {{ color }}\n</button>\n<button\n  mat-button\n  *ngFor=\"let color of backgroundPaletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor('background', color) }\"\n  [colorPicker]=\"getCssVarValue('background', color)\"\n  [style.background]=\"getCssVarValue('background', color)\"\n  cpPosition=\"top-left\"\n  cpAlphaChannel=\"enabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor('background', color, $event)\"\n>\n  {{ color }}\n</button>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-form-field>\n  <mat-select placeholder=\"Apply predefined theme\" [formControl]=\"themesControl\">\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      <forgerock-customization-palette-sample\n        [colors]=\"[themeObject[name]['500']]\"\n      ></forgerock-customization-palette-sample>\n      {{ name | slice: 4 }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of paletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor(color) }\"\n  [colorPicker]=\"getCssVarValue(color)\"\n  [style.background]=\"getCssVarValue(color)\"\n  cpPosition=\"left\"\n  cpAlphaChannel=\"disabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor(color, $event)\"\n>\n  {{ color }}\n</button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-form-field>\n  <mat-select\n    placeholder=\"Apply predefined theme\"\n    [formControl]=\"themesControl\"\n  >\n    <mat-option *ngFor=\"let name of themeNames\" [value]=\"name\">\n      <forgerock-customization-palette-sample\n        [colors]=\"[themeObject[name]['500']]\"\n      ></forgerock-customization-palette-sample>\n      {{ name | slice: 4 }}\n    </mat-option>\n  </mat-select>\n</mat-form-field>\n<button\n  mat-button\n  *ngFor=\"let color of paletteProps\"\n  [ngStyle]=\"{ 'background-color': getColor(color) }\"\n  [colorPicker]=\"getCssVarValue(color)\"\n  [style.background]=\"getCssVarValue(color)\"\n  cpPosition=\"top-left\"\n  cpAlphaChannel=\"disabled\"\n  cpCancelButton=\"true\"\n  cpOutputFormat=\"rgba\"\n  (colorPickerChange)=\"changeColor(color, $event)\"\n>\n  {{ color }}\n</button>\n");
 
 /***/ }),
 
@@ -1429,7 +1429,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/toolbar.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
-/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/__ivy_ngcc__/dist/ngx-color-picker.es5.js");
+/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/__ivy_ngcc__/fesm2015/ngx-color-picker.js");
 /* harmony import */ var ngx_file_drop__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-file-drop */ "./node_modules/ngx-file-drop/__ivy_ngcc__/fesm2015/ngx-file-drop.js");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/__ivy_ngcc__/fesm2015/store.js");
 /* harmony import */ var _components_sidenav_sidenav_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/sidenav/sidenav.component */ "./src/app/customization/components/sidenav/sidenav.component.ts");
@@ -1566,52 +1566,53 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const paletteProps = [
-    '50',
-    '100',
-    '200',
-    '300',
-    '400',
-    '500',
-    '600',
-    '700',
-    '800',
-    '900',
-    'A100',
-    'A200',
-    'A400',
-    'A700'
+    "50",
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "A100",
+    "A200",
+    "A400",
+    "A700",
 ];
 const paletteForegroundProps = [
-    'base',
-    'divider',
-    'dividers',
-    'disabled',
-    'disabled-button',
-    'disabled-text',
-    'hint-text',
-    'secondary-text',
-    'icon',
-    'icons',
-    'text',
-    'slider-min',
-    'slider-off',
-    'slider-off-active'
+    "base",
+    "divider",
+    "dividers",
+    "disabled",
+    "disabled-button",
+    "disabled-text",
+    "hint-text",
+    "secondary-text",
+    "icon",
+    "icons",
+    "text",
+    "slider-min",
+    "slider-off",
+    "slider-off-active",
 ];
 const paletteBackgroundProps = [
-    'status-bar',
-    'app-bar',
-    'background',
-    'hover',
-    'card',
-    'dialog',
-    'disabled-button',
-    'raised-button',
-    'focused-button',
-    'selected-button',
-    'selected-disabled-button',
-    'disabled-button-toggle',
-    'unselected-chip',
-    'disabled-list-option'
+    "status-bar",
+    "app-bar",
+    "background",
+    "hover",
+    "card",
+    "dialog",
+    "disabled-button",
+    "raised-button",
+    "focused-button",
+    "selected-button",
+    "selected-disabled-button",
+    "disabled-button-toggle",
+    "unselected-chip",
+    "disabled-list-option",
+    "tooltip",
 ];
 let ForgerockCssVarsService = class ForgerockCssVarsService {
     constructor(_document, _config) {
@@ -1624,11 +1625,11 @@ let ForgerockCssVarsService = class ForgerockCssVarsService {
         this._matPaletteNames = [];
         this._foregroundPaletteNames = [];
         this._backgroundPaletteNames = [];
-        this.applyPrimaryTheme = (theme) => this.injectVariables(theme, '--palette-primary');
-        this.applyAccentTheme = (theme) => this.injectVariables(theme, '--palette-accent');
-        this.applyWarnTheme = (theme) => this.injectVariables(theme, '--palette-warn');
-        this.applyForegroundTheme = (theme) => this.injectVariables(theme, '--palette-foreground');
-        this.applyBackgroundTheme = (theme) => this.injectVariables(theme, '--palette-background');
+        this.applyPrimaryTheme = (theme) => this.injectVariables(theme, "--palette-primary");
+        this.applyAccentTheme = (theme) => this.injectVariables(theme, "--palette-accent");
+        this.applyWarnTheme = (theme) => this.injectVariables(theme, "--palette-warn");
+        this.applyForegroundTheme = (theme) => this.injectVariables(theme, "--palette-foreground");
+        this.applyBackgroundTheme = (theme) => this.injectVariables(theme, "--palette-background");
         // Keep in case the palette list changes
         // const cssVars = require('sass-extract-loader!./cssvars.scss');
         // console.log(cssVars);
@@ -1653,13 +1654,13 @@ let ForgerockCssVarsService = class ForgerockCssVarsService {
     }
     getThemeNamesByType(type) {
         switch (type) {
-            case 'primary':
-            case 'accent':
-            case 'warn':
+            case "primary":
+            case "accent":
+            case "warn":
                 return this.matPaletteNames;
-            case 'foreground':
+            case "foreground":
                 return this.foregroundPaletteNames;
-            case 'background':
+            case "background":
                 return this.backgroundPaletteNames;
             default:
                 return [];
@@ -1667,13 +1668,13 @@ let ForgerockCssVarsService = class ForgerockCssVarsService {
     }
     getThemeObjectByType(type) {
         switch (type) {
-            case 'primary':
-            case 'accent':
-            case 'warn':
+            case "primary":
+            case "accent":
+            case "warn":
                 return this.matPalettes;
-            case 'foreground':
+            case "foreground":
                 return this.foregroundPalettes;
-            case 'background':
+            case "background":
                 return this.backgroundPalettes;
             default:
                 return {};
@@ -1681,34 +1682,34 @@ let ForgerockCssVarsService = class ForgerockCssVarsService {
     }
     getPalettePropsByType(type) {
         switch (type) {
-            case 'primary':
-            case 'accent':
-            case 'warn':
+            case "primary":
+            case "accent":
+            case "warn":
                 return paletteProps;
-            case 'foreground':
+            case "foreground":
                 return paletteForegroundProps;
-            case 'background':
+            case "background":
                 return paletteBackgroundProps;
             default:
                 return [];
         }
     }
     injectVariables(list, prefix) {
-        Object.keys(list).filter(key => document.documentElement.style.setProperty(prefix ? `${prefix}-${key}` : key, list[key]));
+        Object.keys(list).filter((key) => document.documentElement.style.setProperty(prefix ? `${prefix}-${key}` : key, list[key]));
     }
     init() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             if (!this._init) {
                 this._init = true;
                 // Async computed vars load
-                const { foregroundPalettes, backgroundPalettes, matPalettes, backgroundPaletteNames, foregroundPaletteNames, matPaletteNames } = yield __webpack_require__.e(/*! import() | cssvars-js */ "cssvars-js").then(__webpack_require__.t.bind(null, /*! ./cssvars.js */ "./src/app/customization/services/cssvars.js", 7));
+                const { foregroundPalettes, backgroundPalettes, matPalettes, backgroundPaletteNames, foregroundPaletteNames, matPaletteNames, } = yield __webpack_require__.e(/*! import() | cssvars-js */ "cssvars-js").then(__webpack_require__.t.bind(null, /*! ./cssvars.js */ "./src/app/customization/services/cssvars.js", 7));
                 this._foregroundPalettes = foregroundPalettes;
                 this._backgroundPalettes = backgroundPalettes;
                 this._matPalettes = matPalettes;
                 this._backgroundPaletteNames = backgroundPaletteNames;
                 this._foregroundPaletteNames = foregroundPaletteNames;
                 this._matPaletteNames = matPaletteNames;
-                this._document.documentElement.setAttribute('style', this._config.cssVars);
+                this._document.documentElement.setAttribute("style", this._config.cssVars);
             }
             return Promise.resolve();
         });
@@ -1717,19 +1718,19 @@ let ForgerockCssVarsService = class ForgerockCssVarsService {
         if (!theme)
             return;
         switch (type) {
-            case 'primary':
+            case "primary":
                 this.applyPrimaryTheme(theme);
                 break;
-            case 'accent':
+            case "accent":
                 this.applyAccentTheme(theme);
                 break;
-            case 'warn':
+            case "warn":
                 this.applyWarnTheme(theme);
                 break;
-            case 'foreground':
+            case "foreground":
                 this.applyForegroundTheme(theme);
                 break;
-            case 'background':
+            case "background":
                 this.applyBackgroundTheme(theme);
                 break;
             default:
@@ -1740,17 +1741,17 @@ let ForgerockCssVarsService = class ForgerockCssVarsService {
         return this._document.documentElement.style.getPropertyValue(cssVar);
     }
     setCssVarValue(cssVar, value) {
-        const [r, g, b, a = '1'] = value.split(',');
-        this._document.documentElement.style.setProperty(cssVar, [r, g, b].join(', '));
+        const [r, g, b, a = "1"] = value.split(",");
+        this._document.documentElement.style.setProperty(cssVar, [r, g, b].join(", "));
         if (this.getCssVarValue(cssVar) || parseInt(a, 10) < 1) {
             this._document.documentElement.style.setProperty(`${cssVar}-alpha`, a);
         }
     }
     export() {
         return Object.values(this._document.documentElement.style).reduce((prev, current) => {
-            if (current.startsWith('--')) {
+            if (current.startsWith("--")) {
                 return Object.assign(prev, {
-                    [current]: this.getCssVarValue(current)
+                    [current]: this.getCssVarValue(current),
                 });
             }
             return prev;
@@ -1763,7 +1764,7 @@ ForgerockCssVarsService.ctorParameters = () => [
 ];
 ForgerockCssVarsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
+        providedIn: "root",
     }),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_tokens__WEBPACK_IMPORTED_MODULE_3__["ForgerockCustomizationToken"]))
