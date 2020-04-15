@@ -1,5 +1,8 @@
 <mat-form-field>
-  <mat-select placeholder="Apply predefined theme" [formControl]="themesControl">
+  <mat-select
+    placeholder="Apply predefined theme"
+    [formControl]="themesControl"
+  >
     <mat-option *ngFor="let name of themeNames" [value]="name">
       {{ name }}
     </mat-option>
@@ -11,7 +14,7 @@
   [ngStyle]="{ 'background-color': getColor('foreground', color) }"
   [colorPicker]="getCssVarValue('foreground', color)"
   [style.background]="getCssVarValue('foreground', color)"
-  cpPosition="left"
+  cpPosition="top-left"
   cpAlphaChannel="enabled"
   cpCancelButton="true"
   cpOutputFormat="rgba"
@@ -25,7 +28,7 @@
   [ngStyle]="{ 'background-color': getColor('background', color) }"
   [colorPicker]="getCssVarValue('background', color)"
   [style.background]="getCssVarValue('background', color)"
-  cpPosition="left"
+  cpPosition="top-left"
   cpAlphaChannel="enabled"
   cpCancelButton="true"
   cpOutputFormat="rgba"

@@ -1,70 +1,76 @@
-import { Injectable, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import _merge from 'lodash-es/merge';
-import _get from 'lodash-es/get';
+import { Injectable, Inject } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import _merge from "lodash-es/merge";
+import _get from "lodash-es/get";
 
-import { ForgerockCustomizationToken } from '../tokens';
-import { ForgerockCustomization } from '../customization.module';
+import { ForgerockCustomizationToken } from "../tokens";
+import { ForgerockCustomization } from "../customization.module";
 
 export interface IPalette {
   [key: string]: string;
 }
 
-export type IThemeType = 'primary' | 'accent' | 'warn' | 'foreground' | 'background';
+export type IThemeType =
+  | "primary"
+  | "accent"
+  | "warn"
+  | "foreground"
+  | "background";
 
 const paletteProps: string[] = [
-  '50',
-  '100',
-  '200',
-  '300',
-  '400',
-  '500',
-  '600',
-  '700',
-  '800',
-  '900',
-  'A100',
-  'A200',
-  'A400',
-  'A700'
+  "50",
+  "100",
+  "200",
+  "300",
+  "400",
+  "500",
+  "600",
+  "700",
+  "800",
+  "900",
+  "A100",
+  "A200",
+  "A400",
+  "A700",
 ];
 
 const paletteForegroundProps: string[] = [
-  'base',
-  'divider',
-  'dividers',
-  'disabled',
-  'disabled-button',
-  'disabled-text',
-  'hint-text',
-  'secondary-text',
-  'icon',
-  'icons',
-  'text',
-  'slider-min',
-  'slider-off',
-  'slider-off-active'
+  "base",
+  "divider",
+  "dividers",
+  "disabled",
+  "disabled-button",
+  "disabled-text",
+  "hint-text",
+  "secondary-text",
+  "icon",
+  "icons",
+  "text",
+  "slider-min",
+  "slider-off",
+  "slider-off-active",
 ];
 
 const paletteBackgroundProps: string[] = [
-  'status-bar',
-  'app-bar',
-  'background',
-  'hover',
-  'card',
-  'dialog',
-  'disabled-button',
-  'raised-button',
-  'focused-button',
-  'selected-button',
-  'selected-disabled-button',
-  'disabled-button-toggle',
-  'unselected-chip',
-  'disabled-list-option'
+  "status-bar",
+  "app-bar",
+  "background",
+  "hover",
+  "card",
+  "dialog",
+  "disabled-button",
+  "raised-button",
+  "focused-button",
+  "selected-button",
+  "selected-disabled-button",
+  "disabled-button-toggle",
+  "unselected-chip",
+  "disabled-list-option",
+  "tooltip",
 ];
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ForgerockCssVarsService {
   private _init = false;
@@ -119,13 +125,13 @@ export class ForgerockCssVarsService {
 
   public getThemeNamesByType(type: IThemeType): string[] {
     switch (type) {
-      case 'primary':
-      case 'accent':
-      case 'warn':
+      case "primary":
+      case "accent":
+      case "warn":
         return this.matPaletteNames;
-      case 'foreground':
+      case "foreground":
         return this.foregroundPaletteNames;
-      case 'background':
+      case "background":
         return this.backgroundPaletteNames;
       default:
         return [];
@@ -134,13 +140,13 @@ export class ForgerockCssVarsService {
 
   public getThemeObjectByType(type: IThemeType): { [key: string]: IPalette } {
     switch (type) {
-      case 'primary':
-      case 'accent':
-      case 'warn':
+      case "primary":
+      case "accent":
+      case "warn":
         return this.matPalettes;
-      case 'foreground':
+      case "foreground":
         return this.foregroundPalettes;
-      case 'background':
+      case "background":
         return this.backgroundPalettes;
       default:
         return {};
@@ -149,13 +155,13 @@ export class ForgerockCssVarsService {
 
   public getPalettePropsByType(type: IThemeType): string[] {
     switch (type) {
-      case 'primary':
-      case 'accent':
-      case 'warn':
+      case "primary":
+      case "accent":
+      case "warn":
         return paletteProps;
-      case 'foreground':
+      case "foreground":
         return paletteForegroundProps;
-      case 'background':
+      case "background":
         return paletteBackgroundProps;
       default:
         return [];
@@ -163,8 +169,11 @@ export class ForgerockCssVarsService {
   }
 
   private injectVariables(list: { [key: string]: string }, prefix?: string) {
-    Object.keys(list).filter(key =>
-      document.documentElement.style.setProperty(prefix ? `${prefix}-${key}` : key, list[key])
+    Object.keys(list).filter((key) =>
+      document.documentElement.style.setProperty(
+        prefix ? `${prefix}-${key}` : key,
+        list[key]
+      )
     );
   }
 
@@ -178,16 +187,19 @@ export class ForgerockCssVarsService {
         matPalettes,
         backgroundPaletteNames,
         foregroundPaletteNames,
-        matPaletteNames
-      } = await import('./cssvars.js');
-      
+        matPaletteNames,
+      } = await import("./cssvars.js");
+
       this._foregroundPalettes = foregroundPalettes;
       this._backgroundPalettes = backgroundPalettes;
       this._matPalettes = matPalettes;
       this._backgroundPaletteNames = backgroundPaletteNames;
       this._foregroundPaletteNames = foregroundPaletteNames;
       this._matPaletteNames = matPaletteNames;
-      this._document.documentElement.setAttribute('style', this._config.cssVars);
+      this._document.documentElement.setAttribute(
+        "style",
+        this._config.cssVars
+      );
     }
     return Promise.resolve();
   }
@@ -196,19 +208,19 @@ export class ForgerockCssVarsService {
     if (!theme) return;
 
     switch (type) {
-      case 'primary':
+      case "primary":
         this.applyPrimaryTheme(theme);
         break;
-      case 'accent':
+      case "accent":
         this.applyAccentTheme(theme);
         break;
-      case 'warn':
+      case "warn":
         this.applyWarnTheme(theme);
         break;
-      case 'foreground':
+      case "foreground":
         this.applyForegroundTheme(theme);
         break;
-      case 'background':
+      case "background":
         this.applyBackgroundTheme(theme);
         break;
       default:
@@ -216,34 +228,43 @@ export class ForgerockCssVarsService {
     }
   }
 
-  public applyPrimaryTheme = (theme: { [key: string]: string }) => this.injectVariables(theme, '--palette-primary');
-  public applyAccentTheme = (theme: { [key: string]: string }) => this.injectVariables(theme, '--palette-accent');
-  public applyWarnTheme = (theme: { [key: string]: string }) => this.injectVariables(theme, '--palette-warn');
+  public applyPrimaryTheme = (theme: { [key: string]: string }) =>
+    this.injectVariables(theme, "--palette-primary");
+  public applyAccentTheme = (theme: { [key: string]: string }) =>
+    this.injectVariables(theme, "--palette-accent");
+  public applyWarnTheme = (theme: { [key: string]: string }) =>
+    this.injectVariables(theme, "--palette-warn");
   public applyForegroundTheme = (theme: { [key: string]: string }) =>
-    this.injectVariables(theme, '--palette-foreground');
+    this.injectVariables(theme, "--palette-foreground");
   public applyBackgroundTheme = (theme: { [key: string]: string }) =>
-    this.injectVariables(theme, '--palette-background');
+    this.injectVariables(theme, "--palette-background");
 
   public getCssVarValue(cssVar: string) {
     return this._document.documentElement.style.getPropertyValue(cssVar);
   }
 
   public setCssVarValue(cssVar: string, value: string) {
-    const [r, g, b, a = '1'] = value.split(',');
-    this._document.documentElement.style.setProperty(cssVar, [r, g, b].join(', '));
+    const [r, g, b, a = "1"] = value.split(",");
+    this._document.documentElement.style.setProperty(
+      cssVar,
+      [r, g, b].join(", ")
+    );
     if (this.getCssVarValue(cssVar) || parseInt(a, 10) < 1) {
       this._document.documentElement.style.setProperty(`${cssVar}-alpha`, a);
     }
   }
 
   public export(): IPalette {
-    return Object.values(this._document.documentElement.style).reduce<IPalette>((prev: IPalette, current: string) => {
-      if (current.startsWith('--')) {
-        return Object.assign(prev, {
-          [current]: this.getCssVarValue(current)
-        });
-      }
-      return prev;
-    }, {});
+    return Object.values(this._document.documentElement.style).reduce<IPalette>(
+      (prev: IPalette, current: string) => {
+        if (current.startsWith("--")) {
+          return Object.assign(prev, {
+            [current]: this.getCssVarValue(current),
+          });
+        }
+        return prev;
+      },
+      {}
+    );
   }
 }

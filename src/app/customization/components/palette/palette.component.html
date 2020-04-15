@@ -1,5 +1,8 @@
 <mat-form-field>
-  <mat-select placeholder="Apply predefined theme" [formControl]="themesControl">
+  <mat-select
+    placeholder="Apply predefined theme"
+    [formControl]="themesControl"
+  >
     <mat-option *ngFor="let name of themeNames" [value]="name">
       <forgerock-customization-palette-sample
         [colors]="[themeObject[name]['500']]"
@@ -14,7 +17,7 @@
   [ngStyle]="{ 'background-color': getColor(color) }"
   [colorPicker]="getCssVarValue(color)"
   [style.background]="getCssVarValue(color)"
-  cpPosition="left"
+  cpPosition="top-left"
   cpAlphaChannel="disabled"
   cpCancelButton="true"
   cpOutputFormat="rgba"
