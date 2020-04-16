@@ -23,6 +23,8 @@ import {
 import { Subscription, Observable } from "rxjs";
 import { MetaFormValues } from "../metas/metas.component";
 import { first } from "rxjs/operators";
+import { CustomerFormValues } from "../customer/customer.component";
+import { UpdateCustomerAction } from "../../store/reducers/customer";
 
 @Component({
   selector: "forgerock-customization-sidenav",
@@ -58,6 +60,10 @@ export class ForgerockCustomizationSidenavComponent
 
   ngOnDestroy() {
     this.customizationServiceSubscription.unsubscribe();
+  }
+
+  customerChange(values: CustomerFormValues) {
+    this.store.dispatch(new UpdateCustomerAction(values));
   }
 
   metasChange(values: MetaFormValues) {

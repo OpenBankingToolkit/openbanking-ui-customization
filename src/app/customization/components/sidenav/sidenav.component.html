@@ -18,12 +18,12 @@
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <mat-panel-title>HTML Metas</mat-panel-title>
+            <mat-panel-title>Customer details</mat-panel-title>
           </mat-expansion-panel-header>
-          <forgerock-metas
+          <forgerock-customer
             [defaultValues]="metas$ | async"
-            (update)="metasChange($event)"
-          ></forgerock-metas>
+            (update)="customerChange($event)"
+          ></forgerock-customer>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -51,6 +51,15 @@
               height="50"
             ></forgerock-customer-favicon-container>
           </forgerock-customization-file-upload>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>HTML Metas</mat-panel-title>
+          </mat-expansion-panel-header>
+          <forgerock-metas
+            [defaultValues]="metas$ | async"
+            (update)="metasChange($event)"
+          ></forgerock-metas>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>

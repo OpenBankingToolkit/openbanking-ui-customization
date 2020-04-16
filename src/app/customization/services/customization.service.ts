@@ -7,16 +7,20 @@ import { BehaviorSubject } from "rxjs";
 import { ForgerockCssVarsService, IPalette } from "./cssvars.service";
 import {
   selectors as filesSelector,
-  ICustomizationFilesState
+  ICustomizationFilesState,
 } from "../store/reducers/files";
 import {
   selectors as metadataSelector,
-  ICustomizationMetadataState
+  ICustomizationMetadataState,
 } from "../store/reducers/metadata";
-import { take } from "rxjs/operators";
+import {
+  selectors as customerSelector,
+  ICustomizationCustomerState,
+} from "../store/reducers/customer";
+import { first } from "rxjs/operators";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ForgerockCustomizationService {
   public isOpened$ = new BehaviorSubject<boolean>(false);
@@ -40,21 +44,26 @@ export class ForgerockCustomizationService {
     const exportData: Partial<{
       imgs: ICustomizationFilesState;
       metadata: ICustomizationMetadataState;
+      customer: ICustomizationCustomerState;
       theme: IPalette;
     }> = {};
 
     this.store
-      .pipe(take(1), select(filesSelector.selectAll))
+      .pipe(first(), select(filesSelector.selectAll))
       .subscribe((state: any) => (exportData.imgs = state));
 
     this.store
-      .pipe(take(1), select(metadataSelector.selectAll))
+      .pipe(first(), select(metadataSelector.selectAll))
       .subscribe((state: any) => (exportData.metadata = state));
+
+    this.store
+      .pipe(first(), select(customerSelector.selectAll))
+      .subscribe((state: any) => (exportData.customer = state));
 
     exportData["theme"] = this.cssVarsService.export();
 
     const blob = new Blob([JSON.stringify(exportData, null, 2)], {
-      type: "application/json"
+      type: "application/json",
     });
     fileSaver.saveAs(blob, "customization.json");
   }

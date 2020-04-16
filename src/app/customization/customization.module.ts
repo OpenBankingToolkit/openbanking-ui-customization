@@ -29,11 +29,15 @@ import customizationFilesReducer, {
 import customizationMetaReducer, {
   customizationMetaReducerKey,
 } from "./store/reducers/metadata";
+import customizationCustomerReducer, {
+  customizationCustomerReducerKey,
+} from "./store/reducers/customer";
 import { ForgerockCustomerFaviconModule } from "@forgerock/openbanking-ngx-common/components/forgerock-customer-favicon";
 import { ForgerockCustomerIconCustomModule } from "./components/forgerock-customer-icon/forgerock-customer-icon.module";
 import { ForgerockCustomerLogoCustomModule } from "./components/forgerock-customer-logo/forgerock-customer-logo.module";
 import { ForgerockCustomerFaviconCustomModule } from "./components/forgerock-customer-favicon/forgerock-customer-favicon.module";
 import { MetasModule } from "./components/metas/metas.module";
+import { CustomerModule } from "./components/customer/customer.module";
 
 export interface ForgerockCustomization {
   cssVars: string;
@@ -49,6 +53,7 @@ export function getCustomReducers() {
   return {
     [customizationFilesReducerKey]: customizationFilesReducer,
     [customizationMetaReducerKey]: customizationMetaReducer,
+    [customizationCustomerReducerKey]: customizationCustomerReducer,
   };
 }
 
@@ -74,6 +79,7 @@ export function getCustomReducers() {
     ForgerockCustomerFaviconModule,
     ForgerockMessagesModule,
     MetasModule,
+    CustomerModule,
     StoreModule.forFeature("customization", REDUCER_TOKEN),
   ],
   declarations: [
