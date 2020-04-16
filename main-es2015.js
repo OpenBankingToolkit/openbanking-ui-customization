@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container hasBackdrop=\"false\">\n  <mat-sidenav\n    position=\"end\"\n    mode=\"side\"\n    fixedBottomGap=\"0\"\n    fixedTopGap=\"0\"\n    fixedInViewport\n    disableClose=\"false\"\n    [opened]=\"isOpened\"\n  >\n    <mat-toolbar>\n      <span>Theme Options</span> <span class=\"flex\"></span>\n      <button mat-icon-button (click)=\"close()\">\n        <mat-icon class=\"example-icon\">close</mat-icon>\n      </button>\n    </mat-toolbar>\n    <mat-list>\n      <mat-accordion>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>HTML Metas</mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-metas\n            [defaultValues]=\"metas$ | async\"\n            (update)=\"metasChange($event)\"\n          ></forgerock-metas>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>Logo, icon and favicon </mat-panel-title>\n          </mat-expansion-panel-header>\n          <h3 mat-subheader>Logo <small>(SVG only)</small></h3>\n          <forgerock-customization-file-upload (change)=\"uploadLogo($event)\">\n            <forgerock-customer-logo-container\n              width=\"250\"\n            ></forgerock-customer-logo-container>\n          </forgerock-customization-file-upload>\n          <ng-container *ngIf=\"!disableIcon\">\n            <h3 mat-subheader>Icon <small>(SVG Square only)</small></h3>\n            <forgerock-customization-file-upload (change)=\"uploadIcon($event)\">\n              <forgerock-customer-icon-container\n                width=\"50\"\n                height=\"50\"\n              ></forgerock-customer-icon-container>\n            </forgerock-customization-file-upload>\n          </ng-container>\n          <h3 mat-subheader>Favicon <small>(SVG Square only)</small></h3>\n          <forgerock-customization-file-upload (change)=\"uploadFavicon($event)\">\n            <forgerock-customer-favicon-container\n              width=\"50\"\n              height=\"50\"\n            ></forgerock-customer-favicon-container>\n          </forgerock-customization-file-upload>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-primary-500']\"\n              ></forgerock-customization-palette-sample>\n              <span>Primary Brand Color</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette\n            *ngIf=\"isOpened\"\n            type=\"primary\"\n          ></forgerock-customization-palette>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-accent-500']\"\n              ></forgerock-customization-palette-sample>\n              <span>Accent Color</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette\n            *ngIf=\"isOpened\"\n            type=\"accent\"\n          ></forgerock-customization-palette>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-warn-500']\"\n              ></forgerock-customization-palette-sample>\n              <span>Warn Color</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette\n            *ngIf=\"isOpened\"\n            type=\"warn\"\n          ></forgerock-customization-palette>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-background-background']\"\n              ></forgerock-customization-palette-sample>\n              <span>Foreground/Background Theme</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette-background\n            *ngIf=\"isOpened\"\n          ></forgerock-customization-palette-background>\n        </mat-expansion-panel>\n      </mat-accordion>\n      <h3 mat-subheader>Export Configuration</h3>\n      <mat-list-item>\n        <button\n          mat-flat-button\n          color=\"accent\"\n          class=\"export-button\"\n          (click)=\"export()\"\n        >\n          <mat-icon>cloud_download</mat-icon> Export\n        </button>\n      </mat-list-item>\n    </mat-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <ng-content></ng-content>\n    <button\n      mat-icon-button\n      color=\"primary\"\n      class=\"mat-elevation-z2 theme-options-button\"\n      (click)=\"open()\"\n    >\n      <mat-icon>settings</mat-icon>\n    </button>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container hasBackdrop=\"false\">\n  <mat-sidenav\n    position=\"end\"\n    mode=\"side\"\n    fixedBottomGap=\"0\"\n    fixedTopGap=\"0\"\n    fixedInViewport\n    disableClose=\"false\"\n    [opened]=\"isOpened\"\n  >\n    <mat-toolbar>\n      <span>Theme Options</span> <span class=\"flex\"></span>\n      <button mat-icon-button (click)=\"close()\">\n        <mat-icon class=\"example-icon\">close</mat-icon>\n      </button>\n    </mat-toolbar>\n    <mat-list>\n      <mat-accordion>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>Customer details</mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customer\n            [defaultValues]=\"metas$ | async\"\n            (update)=\"customerChange($event)\"\n          ></forgerock-customer>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>Logo, icon and favicon </mat-panel-title>\n          </mat-expansion-panel-header>\n          <h3 mat-subheader>Logo <small>(SVG only)</small></h3>\n          <forgerock-customization-file-upload (change)=\"uploadLogo($event)\">\n            <forgerock-customer-logo-container\n              width=\"250\"\n            ></forgerock-customer-logo-container>\n          </forgerock-customization-file-upload>\n          <ng-container *ngIf=\"!disableIcon\">\n            <h3 mat-subheader>Icon <small>(SVG Square only)</small></h3>\n            <forgerock-customization-file-upload (change)=\"uploadIcon($event)\">\n              <forgerock-customer-icon-container\n                width=\"50\"\n                height=\"50\"\n              ></forgerock-customer-icon-container>\n            </forgerock-customization-file-upload>\n          </ng-container>\n          <h3 mat-subheader>Favicon <small>(SVG Square only)</small></h3>\n          <forgerock-customization-file-upload (change)=\"uploadFavicon($event)\">\n            <forgerock-customer-favicon-container\n              width=\"50\"\n              height=\"50\"\n            ></forgerock-customer-favicon-container>\n          </forgerock-customization-file-upload>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>HTML Metas</mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-metas\n            [defaultValues]=\"metas$ | async\"\n            (update)=\"metasChange($event)\"\n          ></forgerock-metas>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-primary-500']\"\n              ></forgerock-customization-palette-sample>\n              <span>Primary Brand Color</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette\n            *ngIf=\"isOpened\"\n            type=\"primary\"\n          ></forgerock-customization-palette>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-accent-500']\"\n              ></forgerock-customization-palette-sample>\n              <span>Accent Color</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette\n            *ngIf=\"isOpened\"\n            type=\"accent\"\n          ></forgerock-customization-palette>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-warn-500']\"\n              ></forgerock-customization-palette-sample>\n              <span>Warn Color</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette\n            *ngIf=\"isOpened\"\n            type=\"warn\"\n          ></forgerock-customization-palette>\n        </mat-expansion-panel>\n        <mat-expansion-panel>\n          <mat-expansion-panel-header>\n            <mat-panel-title>\n              <forgerock-customization-palette-sample\n                cssvars=\"true\"\n                [colors]=\"['--palette-background-background']\"\n              ></forgerock-customization-palette-sample>\n              <span>Foreground/Background Theme</span>\n            </mat-panel-title>\n          </mat-expansion-panel-header>\n          <forgerock-customization-palette-background\n            *ngIf=\"isOpened\"\n          ></forgerock-customization-palette-background>\n        </mat-expansion-panel>\n      </mat-accordion>\n      <h3 mat-subheader>Export Configuration</h3>\n      <mat-list-item>\n        <button\n          mat-flat-button\n          color=\"accent\"\n          class=\"export-button\"\n          (click)=\"export()\"\n        >\n          <mat-icon>cloud_download</mat-icon> Export\n        </button>\n      </mat-list-item>\n    </mat-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <ng-content></ng-content>\n    <button\n      mat-icon-button\n      color=\"primary\"\n      class=\"mat-elevation-z2 theme-options-button\"\n      (click)=\"open()\"\n    >\n      <mat-icon>settings</mat-icon>\n    </button>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n");
 
 /***/ }),
 
@@ -604,6 +604,173 @@ MaterialModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         ]
     })
 ], MaterialModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/customization/components/customer/customer.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/customization/components/customer/customer.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: urlRegex, validateUrl, CustomerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "urlRegex", function() { return urlRegex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateUrl", function() { return validateUrl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerComponent", function() { return CustomerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+
+
+const urlRegex = /^(https|http):\/\/[^\s$.?#].[^\s]*$/;
+function validateUrl(c) {
+    if (c.value) {
+        return urlRegex.test(c.value)
+            ? null
+            : {
+                validateUrl: {
+                    valid: false,
+                },
+            };
+    }
+    return null;
+}
+let CustomerComponent = class CustomerComponent {
+    constructor() {
+        this.update = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.customerForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1)]),
+            contact: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("", [
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"),
+            ]),
+            support: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("", [validateUrl]),
+            privacy: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("", [validateUrl]),
+            terms: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("", [validateUrl]),
+            about: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("", [validateUrl]),
+        });
+    }
+    ngOnInit() {
+        this.customerFormSubscription = this.customerForm.valueChanges.subscribe(() => this.update.emit(this.customerForm.value));
+        // this.defaultValues && this.customerForm.setValue(this.defaultValues);
+    }
+    ngOnDestroy() {
+        this.customerFormSubscription.unsubscribe();
+    }
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], CustomerComponent.prototype, "defaultValues", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], CustomerComponent.prototype, "update", void 0);
+CustomerComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "forgerock-customer",
+        template: `
+    <form [formGroup]="customerForm">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Customer name"
+          formControlName="name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          placeholder="Contact public email"
+          formControlName="contact"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Support link"
+          formControlName="support"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Privacy link"
+          formControlName="privacy"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Terms link"
+          formControlName="terms"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="About link"
+          formControlName="about"
+        />
+      </mat-form-field>
+    </form>
+  `,
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+        styles: ["\n      :host {\n        display: block;\n      }\n      mat-form-field {\n        width: 100%;\n      }\n    "]
+    })
+], CustomerComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/customization/components/customer/customer.module.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/customization/components/customer/customer.module.ts ***!
+  \**********************************************************************/
+/*! exports provided: CustomerModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerModule", function() { return CustomerModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
+/* harmony import */ var _customer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./customer.component */ "./src/app/customization/components/customer/customer.component.ts");
+
+
+
+
+
+
+
+let CustomerModule = class CustomerModule {
+};
+CustomerModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_customer_component__WEBPACK_IMPORTED_MODULE_6__["CustomerComponent"]],
+        exports: [_customer_component__WEBPACK_IMPORTED_MODULE_6__["CustomerComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+            _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__["MatFormFieldModule"],
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_5__["MatInputModule"],
+        ],
+    })
+], CustomerModule);
 
 
 
@@ -1333,6 +1500,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_reducers_files__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store/reducers/files */ "./src/app/customization/store/reducers/files.ts");
 /* harmony import */ var _store_reducers_metadata__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/reducers/metadata */ "./src/app/customization/store/reducers/metadata.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _store_reducers_customer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../store/reducers/customer */ "./src/app/customization/store/reducers/customer.ts");
+
 
 
 
@@ -1360,6 +1529,9 @@ let ForgerockCustomizationSidenavComponent = class ForgerockCustomizationSidenav
     }
     ngOnDestroy() {
         this.customizationServiceSubscription.unsubscribe();
+    }
+    customerChange(values) {
+        this.store.dispatch(new _store_reducers_customer__WEBPACK_IMPORTED_MODULE_7__["UpdateCustomerAction"](values));
     }
     metasChange(values) {
         this.store.dispatch(new _store_reducers_metadata__WEBPACK_IMPORTED_MODULE_5__["UpdateMetasAction"](values));
@@ -1443,12 +1615,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tokens__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./tokens */ "./src/app/customization/tokens.ts");
 /* harmony import */ var _store_reducers_files__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./store/reducers/files */ "./src/app/customization/store/reducers/files.ts");
 /* harmony import */ var _store_reducers_metadata__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./store/reducers/metadata */ "./src/app/customization/store/reducers/metadata.ts");
-/* harmony import */ var _forgerock_openbanking_ngx_common_components_forgerock_customer_favicon__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @forgerock/openbanking-ngx-common/components/forgerock-customer-favicon */ "./node_modules/@forgerock/openbanking-ngx-common/components/fesm2015/forgerock-openbanking-ngx-common-components-forgerock-customer-favicon.js");
-/* harmony import */ var _components_forgerock_customer_icon_forgerock_customer_icon_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/forgerock-customer-icon/forgerock-customer-icon.module */ "./src/app/customization/components/forgerock-customer-icon/forgerock-customer-icon.module.ts");
-/* harmony import */ var _components_forgerock_customer_logo_forgerock_customer_logo_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/forgerock-customer-logo/forgerock-customer-logo.module */ "./src/app/customization/components/forgerock-customer-logo/forgerock-customer-logo.module.ts");
-/* harmony import */ var _components_forgerock_customer_favicon_forgerock_customer_favicon_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/forgerock-customer-favicon/forgerock-customer-favicon.module */ "./src/app/customization/components/forgerock-customer-favicon/forgerock-customer-favicon.module.ts");
-/* harmony import */ var _components_metas_metas_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/metas/metas.module */ "./src/app/customization/components/metas/metas.module.ts");
+/* harmony import */ var _store_reducers_customer__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./store/reducers/customer */ "./src/app/customization/store/reducers/customer.ts");
+/* harmony import */ var _forgerock_openbanking_ngx_common_components_forgerock_customer_favicon__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @forgerock/openbanking-ngx-common/components/forgerock-customer-favicon */ "./node_modules/@forgerock/openbanking-ngx-common/components/fesm2015/forgerock-openbanking-ngx-common-components-forgerock-customer-favicon.js");
+/* harmony import */ var _components_forgerock_customer_icon_forgerock_customer_icon_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/forgerock-customer-icon/forgerock-customer-icon.module */ "./src/app/customization/components/forgerock-customer-icon/forgerock-customer-icon.module.ts");
+/* harmony import */ var _components_forgerock_customer_logo_forgerock_customer_logo_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/forgerock-customer-logo/forgerock-customer-logo.module */ "./src/app/customization/components/forgerock-customer-logo/forgerock-customer-logo.module.ts");
+/* harmony import */ var _components_forgerock_customer_favicon_forgerock_customer_favicon_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/forgerock-customer-favicon/forgerock-customer-favicon.module */ "./src/app/customization/components/forgerock-customer-favicon/forgerock-customer-favicon.module.ts");
+/* harmony import */ var _components_metas_metas_module__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/metas/metas.module */ "./src/app/customization/components/metas/metas.module.ts");
+/* harmony import */ var _components_customer_customer_module__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/customer/customer.module */ "./src/app/customization/components/customer/customer.module.ts");
 var ForgerockCustomizationModule_1;
+
+
 
 
 
@@ -1486,6 +1662,7 @@ function getCustomReducers() {
     return {
         [_store_reducers_files__WEBPACK_IMPORTED_MODULE_25__["customizationFilesReducerKey"]]: _store_reducers_files__WEBPACK_IMPORTED_MODULE_25__["default"],
         [_store_reducers_metadata__WEBPACK_IMPORTED_MODULE_26__["customizationMetaReducerKey"]]: _store_reducers_metadata__WEBPACK_IMPORTED_MODULE_26__["default"],
+        [_store_reducers_customer__WEBPACK_IMPORTED_MODULE_27__["customizationCustomerReducerKey"]]: _store_reducers_customer__WEBPACK_IMPORTED_MODULE_27__["default"],
     };
 }
 let ForgerockCustomizationModule = ForgerockCustomizationModule_1 = class ForgerockCustomizationModule {
@@ -1517,12 +1694,13 @@ ForgerockCustomizationModule = ForgerockCustomizationModule_1 = Object(tslib__WE
             _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"],
             ngx_color_picker__WEBPACK_IMPORTED_MODULE_13__["ColorPickerModule"],
             ngx_file_drop__WEBPACK_IMPORTED_MODULE_14__["FileDropModule"],
-            _components_forgerock_customer_icon_forgerock_customer_icon_module__WEBPACK_IMPORTED_MODULE_28__["ForgerockCustomerIconCustomModule"],
-            _components_forgerock_customer_logo_forgerock_customer_logo_module__WEBPACK_IMPORTED_MODULE_29__["ForgerockCustomerLogoCustomModule"],
-            _components_forgerock_customer_favicon_forgerock_customer_favicon_module__WEBPACK_IMPORTED_MODULE_30__["ForgerockCustomerFaviconCustomModule"],
-            _forgerock_openbanking_ngx_common_components_forgerock_customer_favicon__WEBPACK_IMPORTED_MODULE_27__["ForgerockCustomerFaviconModule"],
+            _components_forgerock_customer_icon_forgerock_customer_icon_module__WEBPACK_IMPORTED_MODULE_29__["ForgerockCustomerIconCustomModule"],
+            _components_forgerock_customer_logo_forgerock_customer_logo_module__WEBPACK_IMPORTED_MODULE_30__["ForgerockCustomerLogoCustomModule"],
+            _components_forgerock_customer_favicon_forgerock_customer_favicon_module__WEBPACK_IMPORTED_MODULE_31__["ForgerockCustomerFaviconCustomModule"],
+            _forgerock_openbanking_ngx_common_components_forgerock_customer_favicon__WEBPACK_IMPORTED_MODULE_28__["ForgerockCustomerFaviconModule"],
             _forgerock_openbanking_ngx_common_services_forgerock_messages__WEBPACK_IMPORTED_MODULE_19__["ForgerockMessagesModule"],
-            _components_metas_metas_module__WEBPACK_IMPORTED_MODULE_31__["MetasModule"],
+            _components_metas_metas_module__WEBPACK_IMPORTED_MODULE_32__["MetasModule"],
+            _components_customer_customer_module__WEBPACK_IMPORTED_MODULE_33__["CustomerModule"],
             _ngrx_store__WEBPACK_IMPORTED_MODULE_15__["StoreModule"].forFeature("customization", REDUCER_TOKEN),
         ],
         declarations: [
@@ -1794,7 +1972,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cssvars_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cssvars.service */ "./src/app/customization/services/cssvars.service.ts");
 /* harmony import */ var _store_reducers_files__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../store/reducers/files */ "./src/app/customization/store/reducers/files.ts");
 /* harmony import */ var _store_reducers_metadata__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../store/reducers/metadata */ "./src/app/customization/store/reducers/metadata.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _store_reducers_customer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store/reducers/customer */ "./src/app/customization/store/reducers/customer.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
 
 
 
@@ -1822,14 +2002,17 @@ let ForgerockCustomizationService = class ForgerockCustomizationService {
     export() {
         const exportData = {};
         this.store
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["take"])(1), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(_store_reducers_files__WEBPACK_IMPORTED_MODULE_7__["selectors"].selectAll))
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["first"])(), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(_store_reducers_files__WEBPACK_IMPORTED_MODULE_7__["selectors"].selectAll))
             .subscribe((state) => (exportData.imgs = state));
         this.store
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["take"])(1), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(_store_reducers_metadata__WEBPACK_IMPORTED_MODULE_8__["selectors"].selectAll))
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["first"])(), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(_store_reducers_metadata__WEBPACK_IMPORTED_MODULE_8__["selectors"].selectAll))
             .subscribe((state) => (exportData.metadata = state));
+        this.store
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["first"])(), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(_store_reducers_customer__WEBPACK_IMPORTED_MODULE_9__["selectors"].selectAll))
+            .subscribe((state) => (exportData.customer = state));
         exportData["theme"] = this.cssVarsService.export();
         const blob = new Blob([JSON.stringify(exportData, null, 2)], {
-            type: "application/json"
+            type: "application/json",
         });
         file_saver__WEBPACK_IMPORTED_MODULE_3__["saveAs"](blob, "customization.json");
     }
@@ -1841,11 +2024,67 @@ ForgerockCustomizationService.ctorParameters = () => [
 ];
 ForgerockCustomizationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: "root"
+        providedIn: "root",
     }),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"]))
 ], ForgerockCustomizationService);
 
+
+
+/***/ }),
+
+/***/ "./src/app/customization/store/reducers/customer.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/customization/store/reducers/customer.ts ***!
+  \**********************************************************/
+/*! exports provided: customizationCustomerReducerKey, types, UpdateCustomerAction, initialState, default, selectors */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "customizationCustomerReducerKey", function() { return customizationCustomerReducerKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "types", function() { return types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateCustomerAction", function() { return UpdateCustomerAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return customizationCustomerReducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectors", function() { return selectors; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var lodash_es_get__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash-es/get */ "./node_modules/lodash-es/get.js");
+
+
+const customizationCustomerReducerKey = "customer";
+var types;
+(function (types) {
+    types["UPDATE_CUSTOMER"] = "UPDATE_CUSTOMER";
+})(types || (types = {}));
+class UpdateCustomerAction {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = types.UPDATE_CUSTOMER;
+    }
+}
+const initialState = {
+    name: "",
+    contact: "",
+    support: "",
+    privacy: "",
+    terms: "",
+    about: "",
+};
+function customizationCustomerReducer(state = initialState, action) {
+    switch (action.type) {
+        case types.UPDATE_CUSTOMER: {
+            const { name, contact, support, privacy, terms, about } = action.payload;
+            return Object.assign(Object.assign({}, state), { name, contact, support, privacy, terms, about });
+        }
+        default:
+            return state;
+    }
+}
+const selectAll = (state) => Object(lodash_es_get__WEBPACK_IMPORTED_MODULE_1__["default"])(state, `customization[${customizationCustomerReducerKey}]`);
+const selectors = {
+    selectAll,
+};
 
 
 /***/ }),
